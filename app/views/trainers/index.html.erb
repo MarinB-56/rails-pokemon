@@ -1,0 +1,11 @@
+<h1>Let's Get Training!</h1>
+
+<ul>
+  <% @trainers.each do |trainer| %>
+    <li>
+      <%= cl_image_tag(trainer.photo.key) %>
+      <%= trainer.name %>
+      <%= trainer.age %>
+    </li>
+  <% end %>
+</ul>

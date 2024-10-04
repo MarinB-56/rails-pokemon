@@ -1,0 +1,9 @@
+<h1><%= @pokemon.name %></h1>
+
+<%= link_to "< Pokédex", pokemons_path %>
+
+<h4>You hear a rustle in the tall grass... A wild Pokémon appears!</h4>
+
+<%= cl_image_tag @pokemon.photo.key, width: 250 %>
+<%= @pokemon.name %>
+<%= @pokemon.element_type %>

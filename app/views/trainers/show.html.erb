@@ -1,5 +1,24 @@
+<%= link_to "< Trainers", trainers_path %>
 <h1><%= @trainer.name %></h1>
 
 <%= cl_image_tag(@trainer.photo.key) %>
 <%= @trainer.name %>
 <p><%= @trainer.age %> years old</p>
+
+<h2>His / Her Pokemons</h2>
+<li>
+  <% @pokemons.each do |pokemon| %>
+      <li>
+        <%= link_to pokemon_path(pokemon) do %>
+          <%= cl_image_tag(pokemon.photo.key) %>
+        <% end %>
+        <div>
+          <%= pokemon.name %>
+          <%= pokemon.element_type %>
+        </div>
+        <div>
+          <p>Caught on <%= pokemon.pokeball.caught_on %> at <%= pokemon.pokeball.location %></p>
+        </div>
+      </li>
+  <% end %>
+</li>

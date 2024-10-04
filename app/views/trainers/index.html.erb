@@ -4,10 +4,12 @@
 
 <ul>
   <% @trainers.each do |trainer| %>
-    <li>
-      <%= cl_image_tag(trainer.photo.key) %>
-      <%= trainer.name %>
-      <%= trainer.age %>
-    </li>
+    <%= link_to trainer_path(trainer) do %>
+      <li>
+        <%= cl_image_tag(trainer.photo.key) %>
+        <%= trainer.name %>
+        <%= trainer.age %>
+      </li>
+    <% end %>
   <% end %>
 </ul>

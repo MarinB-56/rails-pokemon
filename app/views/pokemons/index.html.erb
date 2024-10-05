@@ -2,6 +2,12 @@
 
 <%= link_to "Trainers >", trainers_path %>
 
+<h1>Search for a pokemon</h1>
+<%= simple_form_for :search, url: pokemons_path, method: :get do |f| %>
+  <%= f.input :query %>
+  <%= f.submit %>
+<% end %>
+
 <ul>
   <% @pokemons.each do |pokemon| %>
     <li>
@@ -10,3 +16,6 @@
     </li>
   <% end %>
 </ul>
+
+
+<%# Je souhaite modifier @pokemons %>

@@ -17,7 +17,7 @@
           <%= pokemon.element_type %>
         </div>
         <div>
-          <p>Caught on <%= pokemon.pokeballs.caught_on %> at <%= pokemon.pokeball.location %></p>
+          <p>Caught on <%= @trainer.pokeballs.where(pokemon: pokemon).first.caught_on %> at <%= @trainer.pokeballs.where(pokemon: pokemon).first.location %></p>
         </div>
       </li>
   <% end %>

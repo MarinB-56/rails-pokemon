@@ -1,12 +1,14 @@
-<h1>Pokédex</h1>
+<h1>Pokédex (<%= @pokemons.count %>)</h1>
 
 <%= link_to "Trainers >", trainers_path %>
 
 <h1>Search for a pokemon</h1>
 <%= simple_form_for :search, url: pokemons_path, method: :get do |f| %>
   <%= f.input :query %>
-  <%= f.submit %>
+  <%= f.submit "Search" %>
 <% end %>
+
+<%= link_to "Random pokemon", pokemon_path(@pokemons.sample) %>
 
 <ul>
   <% @pokemons.each do |pokemon| %>
@@ -16,6 +18,3 @@
     </li>
   <% end %>
 </ul>
-
-
-<%# Je souhaite modifier @pokemons %>

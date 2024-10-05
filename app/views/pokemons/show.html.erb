@@ -7,3 +7,19 @@
 <%= cl_image_tag @pokemon.photo.key, width: 250 %>
 <%= @pokemon.name %>
 <%= @pokemon.element_type %>
+
+<h1>Trainers :
+  </ul>
+    <% @pokemon.trainers.each do |trainer| %>
+      <li><%= trainer.name %></li>
+    <% end %>
+  <ul>
+</h1>
+
+<%# Pokeball form %>
+<%= simple_form_for [@pokemon, @pokeball] do |f| %>
+  <%= f.association :trainer %>
+  <%= f.input :location, collection: ["Vermilion City", "Cerulean City", "Pewter City", "Saffron City", "Celadon City", "Cinnabar Island", "Fuchsia City"] %>
+  <%= f.input :caught_on %>
+  <%= f.submit %>
+<% end %>
